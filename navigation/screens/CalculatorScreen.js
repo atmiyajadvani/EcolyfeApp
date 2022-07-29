@@ -10,18 +10,21 @@ const CalculatorScreen = () =>{
         <SafeAreaView>
             <StatusBar style="auto" />
             <View style={styles.container}>
+                <Image source={require("../../assets/images/plant.png")}></Image>
                 <Text style={styles.h1}>Calculate your {'\n'}carbon footprint</Text>
                 <Text style={styles.p1}>Identify ways that you can lessen your {'\n'}impact on the environment.</Text>
                 <Text style={styles.p4}>* the calculated carbon footprint is an estimate.</Text>
                 <Pressable style={styles.primaryButton}><Text style={styles.buttonText}>Calculate your footprint</Text></Pressable>
             </View> 
-    </SafeAreaView>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: 80,
     },
 
 
@@ -47,10 +50,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#6E757C',
         lineHeight: 24,
+        marginBottom: 100,
     },
 
     p4: {
-        paddingTop: 40,
         fontFamily: 'PJS-MediumItalic',
         lineHeight: 14,
         fontSize: 12,

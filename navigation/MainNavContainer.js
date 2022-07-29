@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+
 //Screens
 import CalculatorScreen from './screens/CalculatorScreen';
 import BlogsScreen from './screens/BlogsScreen';
@@ -27,12 +28,14 @@ const MainNavContainer = ({navigation}) =>{
             <Tab.Navigator
             initialRouteName={calculator}
             screenOptions={({ route }) => ({
+                headerShown: false,
+                backgroundcolor: '#fff',
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
                     let rn = route.name;
 
                     if (rn === calculator) {
-                        iconName = focused ? 'home' : 'home-outline';
+                        iconName = focused ? 'cloudy-sharp' : 'cloudy-outline';
                     } else if (rn === blogs) {
                         iconName = focused ? 'book' : 'book-outline';
                     }else if (rn === marketplace) {
@@ -45,18 +48,15 @@ const MainNavContainer = ({navigation}) =>{
                 },
             })}
             tabBarOptions={{
-                activeTintColor: 'tomato',
+                activeTintColor: '#1AC77E',
                 inactiveTintColor: 'gray',
-                labelStyle: {
-                    fontSize: 10,
-                    fontFamily: 'PJS-Bold',
-                    marginTop: 10,
+                iconStyle:{
+                    width: 24,
+                    height: 24,
                 },
-                style: {
-                    marginTop: 20,
-                    height: 70,
+                styles: {
+                    backgroundColor: '#F9F9F9',
                 }
-                
             }}
             >
 
