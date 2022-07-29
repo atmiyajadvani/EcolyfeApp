@@ -1,6 +1,8 @@
 import * as React from 'react'; 
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+
 
 
 const CalculatorScreen = () =>{
@@ -8,7 +10,6 @@ const CalculatorScreen = () =>{
         <SafeAreaView>
             <StatusBar style="auto" />
             <View style={styles.container}>
-                <Image source={require('./assets/images/plant.png')} style={styles.image} />
                 <Text style={styles.h1}>Calculate your {'\n'}carbon footprint</Text>
                 <Text style={styles.p1}>Identify ways that you can lessen your {'\n'}impact on the environment.</Text>
                 <Text style={styles.p4}>* the calculated carbon footprint is an estimate.</Text>

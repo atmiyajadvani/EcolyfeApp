@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { useFonts } from 'expo-font';
+
+import MainNavContainer from './navigation/MainNavContainer';
 
 
 export default function App() {
@@ -16,11 +17,8 @@ export default function App() {
   });
   
   return (
-    <View  style={styles.container}>
-      <Text>Hello World!</Text>
-    </View>
-  );
-}
+    <MainNavContainer /> 
+)};
 
 const styles = StyleSheet.create({
   container: {
@@ -28,5 +26,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
- 
 });
