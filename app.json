@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "EcolyfeApp",
+    "slug": "EcolyfeApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
