@@ -4,7 +4,8 @@ import { StyleSheet, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import Colors from '../constants/Colors';
+import { Typography } from '../constants/Typography';
 
 //Screens
 import CalculatorScreen from './screens/CalculatorScreen';
@@ -48,7 +49,7 @@ const MainNavContainer = ({navigation}) =>{
                 },
             })}
             tabBarOptions={{
-                activeTintColor: '#1AC77E',
+                activeTintColor: Colors.green,
                 inactiveTintColor: 'gray',
                 iconStyle:{
                     width: 24,
