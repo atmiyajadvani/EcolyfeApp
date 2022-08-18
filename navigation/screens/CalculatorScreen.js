@@ -1,9 +1,8 @@
-import * as React from 'react'; 
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-
+import Typography from '../../constants/Typography';
 
 const CalculatorScreen = () =>{
     return (
@@ -11,9 +10,9 @@ const CalculatorScreen = () =>{
             <StatusBar style="auto" />
             <View style={styles.container}>
                 <Image source={require("../../assets/images/plant.png")}></Image>
-                <Text style={styles.h1}>Calculate your {'\n'}carbon footprint</Text>
-                <Text style={styles.p1}>Identify ways that you can lessen your {'\n'}impact on the environment.</Text>
-                <Text style={styles.p4}>* the calculated carbon footprint is an estimate.</Text>
+                <Text style={[Typography.h1, styles.h1]}>Calculate your {'\n'}carbon footprint</Text>
+                <Text style={[Typography.p1, styles.p1]}>Identify ways that you can lessen your {'\n'}impact on the environment.</Text>
+                <Text style={[Typography.p3, styles.p3]}>* the calculated carbon footprint is an estimate.</Text>
                 <Pressable style={styles.primaryButton}><Text style={styles.buttonText}>Calculate your footprint</Text></Pressable>
             </View> 
         </SafeAreaView>
@@ -36,27 +35,17 @@ const styles = StyleSheet.create({
     },
 
     h1: {
-        fontFamily: 'PJS-ExtraBold',
-        fontSize: 28,
-        letterSpacing: -0.25,
         textAlign: 'center',
     },
 
     p1: {
         paddingTop: 12,
-        fontFamily: 'PJS-Medium',
-        fontSize: 16,
-        letterSpacing: -0.25,
         textAlign: 'center',
         color: '#6E757C',
-        lineHeight: 24,
         marginBottom: 100,
     },
 
-    p4: {
-        fontFamily: 'PJS-MediumItalic',
-        lineHeight: 14,
-        fontSize: 12,
+    p3: {
         marginBottom: 12,
         color: '#AEB5BC',
     },

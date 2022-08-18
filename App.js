@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useCallback } from 'react';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { useFonts } from 'expo-font';
 
@@ -15,9 +16,27 @@ export default function App() {
     'PJS-Regular': require('./assets/fonts/PJS-Regular.ttf'),
     'PJS-SemiBold': require('./assets/fonts/PJS-SemiBold.ttf'),
   });
+
+  useEffect(() => {
+    async function prepare() {
+      await SplashScreen.preventAutoHideAsync();
+    }
+    
+    prepare();
+  }, []);
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+  
+  if (!fontsLoaded) {
+    return null;
+  }
   
   return (
-    <MainNavContainer /> 
+    <MainNavContainer onLayout={onLayoutRootView}/> 
 )};
 
 const styles = StyleSheet.create({
