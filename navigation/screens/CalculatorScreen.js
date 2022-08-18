@@ -2,9 +2,15 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
+import Button from '../../constants/UI/Button';
 import Typography from '../../constants/Typography';
 
 const CalculatorScreen = () =>{
+
+    function goToNextScreen(){
+        console.log("Go to next screen");
+    }
+
     return (
         <SafeAreaView>
             <StatusBar style="auto" />
@@ -13,9 +19,9 @@ const CalculatorScreen = () =>{
                 <Text style={[Typography.h1, styles.h1]}>Calculate your {'\n'}carbon footprint</Text>
                 <Text style={[Typography.p1, styles.p1]}>Identify ways that you can lessen your {'\n'}impact on the environment.</Text>
                 <Text style={[Typography.p3, styles.p3]}>* the calculated carbon footprint is an estimate.</Text>
-                <Pressable style={styles.primaryButton}><Text style={styles.buttonText}>Calculate your footprint</Text></Pressable>
+                <Button text={"Calculate your footprint"} type={"primary"} onPress={goToNextScreen}></Button>
             </View> 
-        </SafeAreaView>
+        </SafeAreaView> 
     );
 }
 
@@ -50,20 +56,7 @@ const styles = StyleSheet.create({
         color: '#AEB5BC',
     },
 
-    primaryButton: {
-        height: 50,
-        width: 327,
-        backgroundColor: '#1AC77E',
-        borderRadius: 16,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
 
-    buttonText: {
-        fontFamily: 'PJS-SemiBold',
-        fontSize: 14,
-        color: '#ffffff',
-    }
 
 });
 

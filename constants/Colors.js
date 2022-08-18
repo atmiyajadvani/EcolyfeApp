@@ -13,6 +13,10 @@ const Colors = {
     grey500: '#DADADA',
     white: '#FFFFFF',
 
+    // Button Colors
+    primaryButton: '#1AC77E',
+    secondaryButton: '#6E757C',
+    disabledButton: '#979797',
 }
 
 export default Colors;
