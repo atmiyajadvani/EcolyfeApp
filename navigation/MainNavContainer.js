@@ -51,8 +51,11 @@ const MainNavContainer = ({navigation}) =>{
                 activeTintColor: Colors.green,
                 inactiveTintColor: 'gray',
                 iconStyle:{
-                    width: 24,
-                    height: 24,
+                    width: 40,
+                    height: 40,
+                },
+                labelStyle: {
+                    fontSize: 10,
                 },
                 styles: {
                     backgroundColor: '#F9F9F9',
