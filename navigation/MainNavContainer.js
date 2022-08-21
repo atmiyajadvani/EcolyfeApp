@@ -24,6 +24,7 @@ const Tab = createBottomTabNavigator();
 const MainNavContainer = ({navigation}) =>{
 
     return (
+        
         <NavigationContainer>
             <Tab.Navigator
             initialRouteName={calculator}

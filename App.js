@@ -3,7 +3,19 @@ import { useEffect, useCallback } from 'react';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { useFonts } from 'expo-font';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import MainNavContainer from './navigation/MainNavContainer';
+import CalculatorScreen from './navigation/screens/CalculatorScreen';
+import { StatusBar } from 'expo-status-bar';
+
+//Screens
+import S1_Process from '../EcolyfeApp/navigation/calculator-screens/S1_Process';
+import S2_Residence from '../EcolyfeApp/navigation/calculator-screens/S2_Residence';
+
+
+const Stack = createNativeStackNavigator();
 
 
 export default function App() {
@@ -36,7 +48,31 @@ export default function App() {
   }
   
   return (
-    <MainNavContainer onLayout={onLayoutRootView}/> 
+    <>
+      <StatusBar style='auto'/>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen 
+            name='ProcessScreen' 
+            component={S1_Process} 
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen 
+            name='CalculatorHome' 
+            component={CalculatorScreen} 
+            options={{ headerShown: true }}
+          />
+    
+          <Stack.Screen 
+            name='ResidenceScreen' 
+            component={S2_Residence} 
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
+    
+    
 )};
 
 const styles = StyleSheet.create({
