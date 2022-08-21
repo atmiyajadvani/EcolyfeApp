@@ -15,7 +15,7 @@ const Colors = {
 
     // Button Colors
     primaryButton: '#1AC77E',
-    secondaryButton: '#6E757C',
+    secondaryButton: '#110B11',
     disabledButton: '#979797',
 }
 

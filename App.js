@@ -53,25 +53,24 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen 
+            name='CalculatorHome' 
+            component={CalculatorScreen} 
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen 
             name='ProcessScreen' 
             component={S1_Process} 
             options={{ headerShown: false }}
           />
           <Stack.Screen 
-            name='CalculatorHome' 
-            component={CalculatorScreen} 
-            options={{ headerShown: true }}
-          />
-    
-          <Stack.Screen 
-            name='ResidenceScreen' 
+            name='ResidenceScreen'  
             component={S2_Residence} 
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>
     </>
-    
+  
     
 )};
 

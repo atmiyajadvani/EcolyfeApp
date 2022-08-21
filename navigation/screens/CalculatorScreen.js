@@ -10,8 +10,9 @@ import Typography from '../../constants/Typography';
 const CalculatorScreen = ({navigation}) =>{
 
     function goToNextScreen(){
-        navigation.navigate({Screen1});
+        navigation.navigate("ProcessScreen");
     }
+
 
     return (
         <SafeAreaView>
