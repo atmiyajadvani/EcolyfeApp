@@ -10,7 +10,7 @@ const Colors = {
     grey200: '#6E757C',
     grey300: '#979797',
     grey400: '#BDBDBD',
-    grey500: '#DADADA',
+    grey500: '#F1F1F1',
     white: '#FFFFFF',
 
     // Button Colors

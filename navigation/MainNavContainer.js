@@ -7,10 +7,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../constants/Colors';
 
 //Screens
-import CalculatorScreen from './screens/CalculatorScreen';
 import BlogsScreen from './screens/BlogsScreen';
 import MarketplaceScreen from './screens/MarketplaceScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import CalculatorNavigator from './screens/CalculatorNavigator';
 
 //Screen Name
 const calculator = 'Calculator';
@@ -27,44 +27,44 @@ const MainNavContainer = ({navigation}) =>{
         
         <NavigationContainer>
             <Tab.Navigator
-            initialRouteName={calculator}
-            screenOptions={({ route }) => ({
-                headerShown: false,
-                backgroundcolor: '#fff',
-                tabBarIcon: ({ focused, color, size }) => {
-                    let iconName;
-                    let rn = route.name;
+                initialRouteName={calculator}
+                screenOptions={({ route }) => ({
+                    headerShown: false,
+                    backgroundcolor: '#fff',
+                    tabBarIcon: ({ focused, color, size }) => {
+                        let iconName;
+                        let rn = route.name;
 
-                    if (rn === calculator) {
-                        iconName = focused ? 'cloudy-sharp' : 'cloudy-outline';
-                    } else if (rn === blogs) {
-                        iconName = focused ? 'book' : 'book-outline';
-                    }else if (rn === marketplace) {
-                        iconName = focused ? 'cart' : 'cart-outline';
-                    } else if (rn === profile) {
-                        iconName = focused ? 'person' : 'person-outline';
+                        if (rn === calculator) {
+                            iconName = focused ? 'cloudy-sharp' : 'cloudy-outline';
+                        } else if (rn === blogs) {
+                            iconName = focused ? 'book' : 'book-outline';
+                        }else if (rn === marketplace) {
+                            iconName = focused ? 'cart' : 'cart-outline';
+                        } else if (rn === profile) {
+                            iconName = focused ? 'person' : 'person-outline';
+                        }
+
+                        return <Ionicons name={iconName} size={size} color={color} />;
+                    },
+                })}
+                tabBarOptions={{
+                    activeTintColor: Colors.green,
+                    inactiveTintColor: 'gray',
+                    iconStyle:{
+                        width: 40,
+                        height: 40,
+                    },
+                    labelStyle: {
+                        fontSize: 10,
+                    },
+                    styles: {
+                        backgroundColor: '#F9F9F9',
                     }
+                }}
+                >
 
-                    return <Ionicons name={iconName} size={size} color={color} />;
-                },
-            })}
-            tabBarOptions={{
-                activeTintColor: Colors.green,
-                inactiveTintColor: 'gray',
-                iconStyle:{
-                    width: 40,
-                    height: 40,
-                },
-                labelStyle: {
-                    fontSize: 10,
-                },
-                styles: {
-                    backgroundColor: '#F9F9F9',
-                }
-            }}
-            >
-
-                <Tab.Screen name={calculator} component={CalculatorScreen} />
+                <Tab.Screen name={calculator} component={CalculatorNavigator} />
                 <Tab.Screen name={blogs} component={BlogsScreen} />
                 <Tab.Screen name={marketplace} component={MarketplaceScreen} />
                 <Tab.Screen name={profile} component={ProfileScreen} /> 

@@ -6,6 +6,16 @@ import { StatusBar } from 'expo-status-bar';
 import Button from '../../constants/UI/Button';
 import Typography from '../../constants/Typography';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//Screens
+import S1_CalculatorScreen from '../calculator-screens/S1_CalculatorScreen';
+import S1_Process from '../calculator-screens/S2_Process';
+import S2_Residence from '../calculator-screens/S3_Residence';
+
+
+const Stack = createNativeStackNavigator();
 
 const CalculatorScreen = ({navigation}) =>{
 
@@ -13,12 +23,11 @@ const CalculatorScreen = ({navigation}) =>{
         navigation.navigate("ProcessScreen");
     }
 
-
     return (
         <SafeAreaView>
             <StatusBar style="auto" />
             <View style={styles.container}>
-                <Image source={require("../../assets/images/intro_image.png")}></Image>
+                <Image source={require("../../assets/images/intro_image.png")} style={styles.image}></Image>
                 <Text style={[Typography.h1, styles.h1]}>Calculate your {'\n'}carbon footprint</Text>
                 <Text style={[Typography.p1, styles.p1]}>Identify ways that you can lessen your {'\n'}impact on the environment.</Text>
                 <Text style={[Typography.p3, styles.p3]}>* the calculated carbon footprint is an estimate.</Text>
@@ -39,9 +48,9 @@ const styles = StyleSheet.create({
 
 
     image: {
-        marginTop: 50,
-        width: 300,
-        height: 300,
+        marginTop: 20,
+        width: 280,
+        height: 280,
         marginBottom: 40,
     },
 
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
         paddingTop: 12,
         textAlign: 'center',
         color: '#6E757C',
-        marginBottom: 100,
+        marginBottom: 70,
     },
 
     p3: {

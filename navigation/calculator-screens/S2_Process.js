@@ -8,14 +8,16 @@ import BackButton from '../../constants/UI/BackButton';
 import Typography from '../../constants/Typography';
 import Colors from '../../constants/Colors';
 
-import { NavigationContainer } from '@react-navigation/native';
 
 
-
-const S1_Process = ({navigation}) =>{
+const S2_Process = ({navigation}) =>{
 
     function goBackTo(){
         navigation.navigate("CalculatorHome");
+    }
+
+    function goToNextScreen(){
+        navigation.navigate("ResidenceScreen");
     }
 
     return (
@@ -24,16 +26,15 @@ const S1_Process = ({navigation}) =>{
             <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
                 <Image source={require("../../assets/images/process_image.png")} style={styles.image}></Image>
-                <Text style={[Typography.h1, styles.h1]}>Determine your carbon points</Text>
+                <Text style={[Typography.h1, styles.h1]}>About Carbon Points</Text>
                 <View style={styles.descriptionContainer}>
                     <Text style={[Typography.p2, styles.p2]}>
                         • Your points will determine your impact on the planet. {'\n'}
                         • If your score is less than 60 points , then you are making a smaller impact on your planet.{'\n'}
                         • If your score is more than 60 points , then you might want to look for some ways that you can reduce your impact.
-                        
                     </Text>
                 </View>
-                <Button text={"Calculate your footprint"} type={"secondary"} ></Button>
+                <Button text={"Calculate your footprint"} type={"secondary"} onPress={goToNextScreen} ></Button>
             </View> 
         </SafeAreaView>
         
@@ -55,13 +56,15 @@ const styles = StyleSheet.create({
         marginBottom: 40,
     },
 
-    descriptionContainer:{
-        marginHorizontal: 24,
-        height: 'auto',
-    },
 
     h1: {
         textAlign: 'left',
+    },
+
+    descriptionContainer:{
+        marginHorizontal: 24,
+        height: 'auto',
+        marginBottom: 40,
     },
 
     p2: {
@@ -72,4 +75,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default S1_Process;
+export default S2_Process;

@@ -2,20 +2,24 @@ import React from 'react';
 import { useEffect, useCallback } from 'react';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { useFonts } from 'expo-font';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import MainNavContainer from './navigation/MainNavContainer';
-import CalculatorScreen from './navigation/screens/CalculatorScreen';
 import { StatusBar } from 'expo-status-bar';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Colors from '../EcolyfeApp/constants/Colors';
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //Screens
-import S1_Process from '../EcolyfeApp/navigation/calculator-screens/S1_Process';
-import S2_Residence from '../EcolyfeApp/navigation/calculator-screens/S2_Residence';
+import MainNavContainer from './navigation/MainNavContainer';
 
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
+const BottomTab = createBottomTabNavigator();
+
+//Screen Name Variables
+const calculator = 'Calculator';
+const blogs = 'Blogs';
+const marketplace = 'Marketplace';
+const profile = 'Profile';
 
 
 export default function App() {
@@ -48,30 +52,7 @@ export default function App() {
   }
   
   return (
-    <>
-      <StatusBar style='auto'/>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen 
-            name='CalculatorHome' 
-            component={CalculatorScreen} 
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen 
-            name='ProcessScreen' 
-            component={S1_Process} 
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen 
-            name='ResidenceScreen'  
-            component={S2_Residence} 
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </>
-  
-    
+    <MainNavContainer onLayout={onLayoutRootView} />
 )};
 
 const styles = StyleSheet.create({
