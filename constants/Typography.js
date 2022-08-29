@@ -3,42 +3,37 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
 
     h1: {
-        fontFamily: 'PJS-ExtraBold',
-        fontSize: 28,
-        letterSpacing: -0.25,
+        fontFamily: 'SG-Bold',
+        fontSize: 32,
     },
 
     h2: {
-        fontFamily: 'PJS-ExtraBold',
-        fontSize: 20,
-        letterSpacing: -0.25,
+        fontFamily: 'SG-Bold',
+        fontSize: 24,
+        lineHeight: 32,
     },
 
     h3: {
-        fontFamily: 'PJS-ExtraBold',
+        fontFamily: 'SG-Bold',
         fontSize: 16,
-        letterSpacing: -0.25,
     },
 
     p1: {
-        fontFamily: 'PJS-Medium',
+        fontFamily: 'SG-Medium',
         fontSize: 16,
         lineHeight: 24,
-        letterSpacing: -0.25,
     },
 
     p2: {
-        fontFamily: 'PJS-Medium',
+        fontFamily: 'SG-Medium',
         fontSize: 14,
         lineHeight: 24,
-        letterSpacing: -0.25,
     },
 
     p3: {
-        fontFamily: 'PJS-MediumItalic',
+        fontFamily: 'SG-Medium',
         fontSize: 12,
         lineHeight: 14,
-        letterSpacing: -0.25,
     },
 
 

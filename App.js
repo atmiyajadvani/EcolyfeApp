@@ -25,12 +25,11 @@ const profile = 'Profile';
 export default function App() {
 
   const [fontsLoaded] = useFonts({
-    'PJS-Bold': require('./assets/fonts/PJS-Regular.ttf'),
-    'PJS-ExtraBold': require('./assets/fonts/PJS-ExtraBold.ttf'),
-    'PJS-Medium': require('./assets/fonts/PJS-Medium.ttf'),
-    'PJS-MediumItalic': require('./assets/fonts/PJS-MediumItalic.ttf'),
-    'PJS-Regular': require('./assets/fonts/PJS-Regular.ttf'),
-    'PJS-SemiBold': require('./assets/fonts/PJS-SemiBold.ttf'),
+    'SG-Bold': require('./assets/fonts/SG-Bold.ttf'),
+    'SG-Light': require('./assets/fonts/SG-Light.ttf'),
+    'SG-Medium': require('./assets/fonts/SG-Medium.ttf'),
+    'SG-Regular': require('./assets/fonts/SG-Regular.ttf'),
+    'SG-SemiBold': require('./assets/fonts/SG-SemiBold.ttf'),
   });
 
   useEffect(() => {
