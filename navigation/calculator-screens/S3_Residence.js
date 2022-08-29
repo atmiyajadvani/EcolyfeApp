@@ -9,6 +9,7 @@ import Typography from '../../constants/Typography';
 import Colors from '../../constants/Colors';
 
 import SelectList from 'react-native-dropdown-select-list';
+import CarbonPoints from '../../constants/UI/CarbonPoints';
 
 
 const S3_Residence = ({navigation}) =>{
@@ -55,6 +56,7 @@ const S3_Residence = ({navigation}) =>{
                         maxHeight={200}
                     />
                 </View>
+                <CarbonPoints />
                 <Button text={"Continue"} type={"secondary"} onPress={goToNextScreen} ></Button>
             </View> 
         </SafeAreaView>
