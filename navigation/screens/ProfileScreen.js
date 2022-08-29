@@ -1,5 +1,6 @@
 import * as React from 'react'; 
 import { StyleSheet, Text, View, Alert } from 'react-native';
+import Typography from '../../constants/Typography';
 
 const ProfileScreen = ({navigation}) =>{
 
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     },
 
     h1: {
-        fontFamily: 'PJS-ExtraBold',
+        fontFamily: 'SG-Bold',
         fontSize: 28,
         letterSpacing: -0.25,
         textAlign: 'center',

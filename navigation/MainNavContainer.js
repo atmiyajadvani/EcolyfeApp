@@ -15,7 +15,6 @@ import CalculatorNavigator from './screens/CalculatorNavigator';
 //Screen Name
 const calculator = 'Calculator';
 const blogs = 'Blogs';
-const marketplace = 'Marketplace';
 const profile = 'Profile';
 
 const Tab = createBottomTabNavigator();
@@ -39,8 +38,6 @@ const MainNavContainer = ({navigation}) =>{
                             iconName = focused ? 'cloudy-sharp' : 'cloudy-outline';
                         } else if (rn === blogs) {
                             iconName = focused ? 'book' : 'book-outline';
-                        }else if (rn === marketplace) {
-                            iconName = focused ? 'cart' : 'cart-outline';
                         } else if (rn === profile) {
                             iconName = focused ? 'person' : 'person-outline';
                         }
@@ -57,6 +54,7 @@ const MainNavContainer = ({navigation}) =>{
                     },
                     labelStyle: {
                         fontSize: 10,
+                        fontFamily: 'SG-Bold',
                     },
                     styles: {
                         backgroundColor: '#F9F9F9',
@@ -66,7 +64,6 @@ const MainNavContainer = ({navigation}) =>{
 
                 <Tab.Screen name={calculator} component={CalculatorNavigator} />
                 <Tab.Screen name={blogs} component={BlogsScreen} />
-                <Tab.Screen name={marketplace} component={MarketplaceScreen} />
                 <Tab.Screen name={profile} component={ProfileScreen} /> 
             </Tab.Navigator>
         </NavigationContainer>

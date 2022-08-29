@@ -36,6 +36,16 @@ const styles = StyleSheet.create({
         lineHeight: 14,
     },
 
+    button:{
+        fontFamily: 'SG-SemiBold',
+        fontSize: 14,
+    },
+
+    bottomTab:{
+        fontFamily: 'SG-Bold',
+        fontSize: 10,
+    }
+
 
 });
 

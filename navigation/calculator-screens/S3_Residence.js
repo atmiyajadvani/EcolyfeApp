@@ -37,14 +37,14 @@ const S3_Residence = ({navigation}) =>{
 
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.screenView}>
             <StatusBar style="auto" />
             <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
                 <Image source={require("../../assets/images/residence_image.png")} style={styles.image}></Image>
                 <View style={styles.contentContainer}>
                     <Text style={[Typography.p3, styles.p3]}>Step 1 of 9</Text>
-                    <Text style={[Typography.h1, styles.h1]}>Select your residence at University</Text>
+                    <Text style={[Typography.h2, styles.h2]}>Select your residence at University</Text>
 
                     <SelectList 
                         data={data}  
@@ -53,9 +53,7 @@ const S3_Residence = ({navigation}) =>{
                         dropdownStyles={{backgroundColor: Colors.grey500}}
                         dropdownItemTextStyle={{color: Colors.black}}
                         maxHeight={200}
-                
                     />
-
                 </View>
                 <Button text={"Continue"} type={"secondary"} onPress={goToNextScreen} ></Button>
             </View> 
@@ -66,10 +64,22 @@ const S3_Residence = ({navigation}) =>{
 }
 
 const styles = StyleSheet.create({
+
+    screenView:{
+        flex: 1,
+        backgroundColor: Colors.notionBack,
+    },
+
     container: {
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: 80,
+    },
+
+    contentContainer: {
+        textAlign: 'left',
+        justifyContent: 'left',
+        width: '85%',
     },
 
     p3: {
@@ -86,21 +96,16 @@ const styles = StyleSheet.create({
         marginBottom: 40,
     },
 
-    contentContainer: {
-        textAlign: 'left',
-        justifyContent: 'left',
-    },
 
     descriptionContainer:{
         marginHorizontal: 24,
         height: 'auto',
     },
 
-    h1: {
+    h2: {
         textAlign: 'left',
+        marginBottom: 24,
     },
-
-
 
 
 });

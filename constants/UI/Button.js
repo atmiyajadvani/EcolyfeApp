@@ -1,6 +1,7 @@
 import * as React from "react";
 import { View, Text, Pressable } from "react-native"
 import Colors from "../Colors";
+import Typography from "../Typography";
 
 
 const TYPES = ["primary", "secondary", "disabled"];
@@ -21,12 +22,22 @@ const Button = ({text, onPress, type}) => {
             buttonType === "primary" 
             ? Colors.primaryButton : buttonType === "secondary" 
             ? Colors.secondaryButton : Colors.disabledButton,
+        borderWidth: 1,
+        borderColor: 
+            buttonType === "primary"
+            ? Colors.white : Colors.buttonBorder,
     };
 
     return (
         <Pressable style={btnStyle} onPress={onPress} >
             <View>
-                <Text style={{fontFamily: 'PJS-SemiBold', fontSize: 14, color: Colors.white,}}>{text}</Text>
+                <Text style={[ Typography.Button, {
+                    fontFamily: 'SG-SemiBold', 
+                    fontSize: 14, 
+                    color: 
+                        buttonType === "primary"
+                        ? Colors.white : Colors.green100, 
+                }]}>{text}</Text>
             </View>
         </Pressable>
     );

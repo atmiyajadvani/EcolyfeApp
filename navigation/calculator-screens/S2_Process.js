@@ -8,8 +8,6 @@ import BackButton from '../../constants/UI/BackButton';
 import Typography from '../../constants/Typography';
 import Colors from '../../constants/Colors';
 
-
-
 const S2_Process = ({navigation}) =>{
 
     function goBackTo(){
@@ -21,7 +19,7 @@ const S2_Process = ({navigation}) =>{
     }
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.screenView}>
             <StatusBar style="auto" />
             <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
@@ -34,7 +32,7 @@ const S2_Process = ({navigation}) =>{
                         • If your score is more than 60 points , then you might want to look for some ways that you can reduce your impact.
                     </Text>
                 </View>
-                <Button text={"Calculate your footprint"} type={"secondary"} onPress={goToNextScreen} ></Button>
+                <Button text={"Continue"} type={"secondary"} onPress={goToNextScreen} style={styles.button} ></Button>
             </View> 
         </SafeAreaView>
         
@@ -43,6 +41,12 @@ const S2_Process = ({navigation}) =>{
 }
 
 const styles = StyleSheet.create({
+
+    screenView:{
+        flex: 1,
+        backgroundColor: Colors.notionBack,
+    },
+
     container: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -59,17 +63,19 @@ const styles = StyleSheet.create({
 
     h1: {
         textAlign: 'left',
+        color: Colors.green200,
     },
 
     descriptionContainer:{
         marginHorizontal: 24,
         height: 'auto',
-        marginBottom: 40,
+        marginBottom: 35,
     },
 
     p2: {
         paddingTop: 12,
-        color: Colors.grey200,
+        color: Colors.green100,
+        width: 330,
     },
 
 

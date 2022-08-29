@@ -1,8 +1,16 @@
 const Colors = {
 
     // Primary Colors
-    green: '#1AC77E',
+    green: '#00B28B',
     blue: '#3D78CC',
+
+    // New Green Colours
+    green100: '#255054',
+    green200: '#00B28B',
+    green300: '#CDFFCC',
+    grey600: '#F5F5F5',
+    notionBack: '#F9F6F5',
+    buttonBorder: '#E2E1DF',
 
     // Secondary Colors
     black: '#000000',
@@ -14,9 +22,8 @@ const Colors = {
     white: '#FFFFFF',
 
     // Button Colors
-    primaryButton: '#1AC77E',
-    secondaryButton: '#110B11',
-    disabledButton: '#979797',
+    primaryButton: '#00B28B',
+    secondaryButton: '#ffffff',
 }
 
 export default Colors;

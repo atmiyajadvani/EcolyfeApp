@@ -5,17 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 
 import Button from '../../constants/UI/Button';
 import Typography from '../../constants/Typography';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-//Screens
-import S1_CalculatorScreen from '../calculator-screens/S1_CalculatorScreen';
-import S1_Process from '../calculator-screens/S2_Process';
-import S2_Residence from '../calculator-screens/S3_Residence';
-
-
-const Stack = createNativeStackNavigator();
+import Colors from '../../constants/Colors';
 
 const CalculatorScreen = ({navigation}) =>{
 
@@ -24,7 +14,7 @@ const CalculatorScreen = ({navigation}) =>{
     }
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.screenView}>
             <StatusBar style="auto" />
             <View style={styles.container}>
                 <Image source={require("../../assets/images/intro_image.png")} style={styles.image}></Image>
@@ -40,6 +30,12 @@ const CalculatorScreen = ({navigation}) =>{
 }
 
 const styles = StyleSheet.create({
+
+    screenView:{
+        flex: 1,
+        backgroundColor: Colors.notionBack,
+    },
+
     container: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -56,18 +52,19 @@ const styles = StyleSheet.create({
 
     h1: {
         textAlign: 'center',
+        color: Colors.green200
     },
 
     p1: {
         paddingTop: 12,
         textAlign: 'center',
-        color: '#6E757C',
-        marginBottom: 70,
+        color: Colors.green100,
+        marginBottom: 60,
     },
 
     p3: {
-        marginBottom: 12,
-        color: '#AEB5BC',
+        marginBottom: 16,
+        color: Colors.grey300,
     },
 
 
