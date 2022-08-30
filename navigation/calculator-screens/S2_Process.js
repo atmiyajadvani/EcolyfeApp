@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: 80,
+        paddingTop: 10,
     },
 
 
@@ -67,9 +67,9 @@ const styles = StyleSheet.create({
     },
 
     descriptionContainer:{
-        marginHorizontal: 24,
-        height: 'auto',
-        marginBottom: 35,
+        marginHorizontal: 32,
+        marginBottom: 90,
+        marginTop : 12,
     },
 
     p2: {

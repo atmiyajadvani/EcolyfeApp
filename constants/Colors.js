@@ -11,6 +11,7 @@ const Colors = {
     grey600: '#F5F5F5',
     notionBack: '#F9F6F5',
     buttonBorder: '#E2E1DF',
+    inputBox: '#E2E1DF',
 
     // Secondary Colors
     black: '#000000',

@@ -45,18 +45,22 @@ const S3_Residence = ({navigation}) =>{
                 <Image source={require("../../assets/images/residence_image.png")} style={styles.image}></Image>
                 <View style={styles.contentContainer}>
                     <Text style={[Typography.p3, styles.p3]}>Step 1 of 9</Text>
-                    <Text style={[Typography.h2, styles.h2]}>Select your residence at University</Text>
-
-                    <SelectList 
-                        data={data}  
-                        setSelected={setSelected} 
-                        boxStyles={{backgroundColor: Colors.grey500}}
-                        dropdownStyles={{backgroundColor: Colors.grey500}}
-                        dropdownItemTextStyle={{color: Colors.black}}
-                        maxHeight={200}
-                    />
+                    <Text style={[Typography.h2, styles.h2]}>Select your <Text style={styles.inlineText}>residence</Text> at University</Text>
+                    <View style={styles.dropdownContainer}>
+                        <SelectList 
+                            data={data}  
+                            setSelected={setSelected} 
+                            placeholder="Select your residence"
+                            inputStyles={[Typography.p2, styles.inputstyles]}
+                            boxStyles={[Typography.p2, styles.boxstyles]}
+                            dropdownStyles={[Typography.p2 , styles.dropdownList]}
+                            dropdownItemTextStyle={[Typography.p2 , styles.dropdownListText]}
+                            dropdownTextStyles={[Typography.p2 , styles.dropdownText]}
+                            maxHeight={90}
+                        />
+                    </View>
                 </View>
-                <CarbonPoints />
+                <CarbonPoints style={styles.carbonPoints} />
                 <Button text={"Continue"} type={"secondary"} onPress={goToNextScreen} ></Button>
             </View> 
         </SafeAreaView>
@@ -75,7 +79,7 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: 80,
+        paddingTop: 10,
     },
 
     contentContainer: {
@@ -98,6 +102,10 @@ const styles = StyleSheet.create({
         marginBottom: 40,
     },
 
+    inlineText: {
+        color: Colors.green200,
+    },
+
 
     descriptionContainer:{
         marginHorizontal: 24,
@@ -107,6 +115,40 @@ const styles = StyleSheet.create({
     h2: {
         textAlign: 'left',
         marginBottom: 24,
+    },
+
+    dropdownContainer:{
+        marginBottom: 24,
+    },
+
+    inputstyles: {
+        backgroundColor: Colors.white,
+
+    },
+
+    boxstyles: {
+        borderWidth: 1,
+        borderColor: Colors.buttonBorder,
+        backgroundColor: Colors.white,
+    },
+
+    dropdownList: {
+        borderWidth: 1,
+        borderColor: Colors.buttonBorder,
+        backgroundColor: Colors.white,
+
+    },
+
+    dropdownListText: {
+        borderWidth: 1,
+        borderColor: Colors.buttonBorder,
+        backgroundColor: Colors.white,
+        color: Colors.grey200,
+        
+    },
+
+    dropdownText: {
+        color: Colors.grey100,
     },
 
 
