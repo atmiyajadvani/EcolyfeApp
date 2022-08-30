@@ -12,27 +12,22 @@ import SelectList from 'react-native-dropdown-select-list';
 import CarbonPoints from '../../constants/UI/CarbonPoints';
 
 
-const S3_Residence = ({navigation}) =>{
+const S8_Purchases = ({navigation}) =>{
 
     function goBackTo(){
-        navigation.navigate("ProcessScreen");
+        navigation.navigate("DishWasherScreen");
     }
 
     function goToNextScreen(){ 
-        navigation.navigate("MembersScreen");
+        navigation.navigate("WasteScreen");
     }
 
     const [selected, setSelected]= React.useState("");
 
     const data = [
-        {key: '1', value: 'Bethune'},
-        {key: '2', value: 'Calumet'},
-        {key: '3', value: 'Pond'},
-        {key: '4', value: 'Stong'},
-        {key: '5', value: 'Tatham Hall'},
-        {key: '6', value: 'Vanier'},
-        {key: '7', value: 'Winters'},
-        {key: '8', value: 'Founders'},
+        {key: '1', value: '4 - 5 items'},
+        {key: '2', value: '6 - 8 items'},
+        {key: '3', value: '9 - 12 items'},
     ];
     
 
@@ -42,15 +37,15 @@ const S3_Residence = ({navigation}) =>{
             <StatusBar style="auto" />
             <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
-                <Image source={require("../../assets/images/residence_image.png")} style={styles.image}></Image>
+                <Image source={require("../../assets/images/lazy_image.png")} style={styles.image}></Image>
                 <View style={styles.contentContainer}>
-                    <Text style={[Typography.p3, styles.p3]}>Step 1 of 9</Text>
-                    <Text style={[Typography.h2, styles.h2]}>Select your <Text style={styles.inlineText}>residence</Text> at University</Text>
+                    <Text style={[Typography.p3, styles.p3]}>Step 6 of 9</Text>
+                    <Text style={[Typography.h2, styles.h2]}>how many major household <Text style={styles.inlineText}>purchases</Text> you make each year? </Text>
                     <View style={styles.dropdownContainer}>
                         <SelectList 
                             data={data}  
                             setSelected={setSelected} 
-                            placeholder="select your residence"
+                            placeholder="no of members"
                             inputStyles={[Typography.p2, styles.inputstyles]}
                             boxStyles={[Typography.p2, styles.boxstyles]}
                             dropdownStyles={[Typography.p2 , styles.dropdownList]}
@@ -123,13 +118,13 @@ const styles = StyleSheet.create({
 
     inputstyles: {
         backgroundColor: Colors.white,
+
     },
 
     boxstyles: {
         borderWidth: 1,
         borderColor: Colors.buttonBorder,
         backgroundColor: Colors.white,
-        
     },
 
     dropdownList: {
@@ -154,4 +149,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default S3_Residence;
+export default S8_Purchases;

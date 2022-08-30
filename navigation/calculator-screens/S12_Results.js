@@ -12,27 +12,21 @@ import SelectList from 'react-native-dropdown-select-list';
 import CarbonPoints from '../../constants/UI/CarbonPoints';
 
 
-const S3_Residence = ({navigation}) =>{
-
-    function goBackTo(){
-        navigation.navigate("ProcessScreen");
-    }
+const S12_Results = ({navigation}) =>{
 
     function goToNextScreen(){ 
-        navigation.navigate("MembersScreen");
+        navigation.navigate("CalculatorHome");
     }
 
     const [selected, setSelected]= React.useState("");
 
     const data = [
-        {key: '1', value: 'Bethune'},
-        {key: '2', value: 'Calumet'},
-        {key: '3', value: 'Pond'},
-        {key: '4', value: 'Stong'},
-        {key: '5', value: 'Tatham Hall'},
-        {key: '6', value: 'Vanier'},
-        {key: '7', value: 'Winters'},
-        {key: '8', value: 'Founders'},
+        {key: '1', value: 'Myself'},
+        {key: '2', value: '2 members'},
+        {key: '3', value: '3 members'},
+        {key: '4', value: '4 members'},
+        {key: '5', value: '5 members'},
+        {key: '6', value: 'More than 5 members'},
     ];
     
 
@@ -40,28 +34,13 @@ const S3_Residence = ({navigation}) =>{
     return (
         <SafeAreaView style={styles.screenView}>
             <StatusBar style="auto" />
-            <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
-                <Image source={require("../../assets/images/residence_image.png")} style={styles.image}></Image>
+                <Image source={require("../../assets/images/results_image.png")} style={styles.image}></Image>
                 <View style={styles.contentContainer}>
-                    <Text style={[Typography.p3, styles.p3]}>Step 1 of 9</Text>
-                    <Text style={[Typography.h2, styles.h2]}>Select your <Text style={styles.inlineText}>residence</Text> at University</Text>
-                    <View style={styles.dropdownContainer}>
-                        <SelectList 
-                            data={data}  
-                            setSelected={setSelected} 
-                            placeholder="select your residence"
-                            inputStyles={[Typography.p2, styles.inputstyles]}
-                            boxStyles={[Typography.p2, styles.boxstyles]}
-                            dropdownStyles={[Typography.p2 , styles.dropdownList]}
-                            dropdownItemTextStyle={[Typography.p2 , styles.dropdownListText]}
-                            dropdownTextStyles={[Typography.p2 , styles.dropdownText]}
-                            maxHeight={90}
-                        />
-                    </View>
+                    <Text style={[Typography.h2, styles.h2]}>Your total score is <Text style={styles.inlineText}>48 points</Text></Text>
+                    <Text style={[Typography.p3, styles.p3]}>Step 3 of 9</Text>
                 </View>
-                <CarbonPoints style={styles.carbonPoints} />
-                <Button text={"Continue"} type={"secondary"} onPress={goToNextScreen} ></Button>
+                <Button text={"Calculate again"} type={"secondary"} onPress={goToNextScreen} ></Button>
             </View> 
         </SafeAreaView>
         
@@ -123,13 +102,13 @@ const styles = StyleSheet.create({
 
     inputstyles: {
         backgroundColor: Colors.white,
+
     },
 
     boxstyles: {
         borderWidth: 1,
         borderColor: Colors.buttonBorder,
         backgroundColor: Colors.white,
-        
     },
 
     dropdownList: {
@@ -154,4 +133,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default S3_Residence;
+export default S12_Results;

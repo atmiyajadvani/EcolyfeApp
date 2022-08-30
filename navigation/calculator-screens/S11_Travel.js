@@ -12,27 +12,32 @@ import SelectList from 'react-native-dropdown-select-list';
 import CarbonPoints from '../../constants/UI/CarbonPoints';
 
 
-const S3_Residence = ({navigation}) =>{
+const S11_Travel = ({navigation}) =>{
 
     function goBackTo(){
-        navigation.navigate("ProcessScreen");
+        navigation.navigate("RecycleScreen");
     }
 
     function goToNextScreen(){ 
-        navigation.navigate("MembersScreen");
+        navigation.navigate("ResultsScreen");
     }
 
     const [selected, setSelected]= React.useState("");
+    const [optionSelected, setOptionSelected]= React.useState("");
 
-    const data = [
-        {key: '1', value: 'Bethune'},
-        {key: '2', value: 'Calumet'},
-        {key: '3', value: 'Pond'},
-        {key: '4', value: 'Stong'},
-        {key: '5', value: 'Tatham Hall'},
-        {key: '6', value: 'Vanier'},
-        {key: '7', value: 'Winters'},
-        {key: '8', value: 'Founders'},
+
+    const type = [
+        {key: '1', value: 'By car'},
+        {key: '6', value: 'By bicycle'},
+        {key: '7', value: 'By walk'},
+    ];
+
+    const distance = [
+        {key: '1', value: '10-20km'},
+        {key: '2', value: '20-30km'},
+        {key: '3', value: '30-40km'},
+        {key: '4', value: '40-50km'},
+        {key: '5', value: '50-60km'},
     ];
     
 
@@ -42,15 +47,26 @@ const S3_Residence = ({navigation}) =>{
             <StatusBar style="auto" />
             <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
-                <Image source={require("../../assets/images/residence_image.png")} style={styles.image}></Image>
+                <Image source={require("../../assets/images/intro_image.png")} style={styles.image}></Image>
                 <View style={styles.contentContainer}>
-                    <Text style={[Typography.p3, styles.p3]}>Step 1 of 9</Text>
-                    <Text style={[Typography.h2, styles.h2]}>Select your <Text style={styles.inlineText}>residence</Text> at University</Text>
+                    <Text style={[Typography.p3, styles.p3]}>Step 9 of 9</Text>
+                    <Text style={[Typography.h2, styles.h2]}>How do you <Text style={styles.inlineText}>travel?</Text> and how far?</Text>
                     <View style={styles.dropdownContainer}>
                         <SelectList 
-                            data={data}  
+                            data={type}  
                             setSelected={setSelected} 
-                            placeholder="select your residence"
+                            placeholder="no of members"
+                            inputStyles={[Typography.p2, styles.inputstyles]}
+                            boxStyles={[Typography.p2, styles.boxstyles]}
+                            dropdownStyles={[Typography.p2 , styles.dropdownList]}
+                            dropdownItemTextStyle={[Typography.p2 , styles.dropdownListText]}
+                            dropdownTextStyles={[Typography.p2 , styles.dropdownText]}
+                            maxHeight={90}
+                        />
+                        <SelectList 
+                            data={distance}  
+                            setSelected={setOptionSelected} 
+                            placeholder="no of members"
                             inputStyles={[Typography.p2, styles.inputstyles]}
                             boxStyles={[Typography.p2, styles.boxstyles]}
                             dropdownStyles={[Typography.p2 , styles.dropdownList]}
@@ -123,13 +139,13 @@ const styles = StyleSheet.create({
 
     inputstyles: {
         backgroundColor: Colors.white,
+
     },
 
     boxstyles: {
         borderWidth: 1,
         borderColor: Colors.buttonBorder,
         backgroundColor: Colors.white,
-        
     },
 
     dropdownList: {
@@ -154,4 +170,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default S3_Residence;
+export default S11_Travel;
