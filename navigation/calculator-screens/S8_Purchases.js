@@ -37,7 +37,7 @@ const S8_Purchases = ({navigation}) =>{
             <StatusBar style="auto" />
             <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
-                <Image source={require("../../assets/images/lazy_image.png")} style={styles.image}></Image>
+                <Image source={require("../../assets/images/purchases_image.png")} style={styles.image}></Image>
                 <View style={styles.contentContainer}>
                     <Text style={[Typography.p3, styles.p3]}>Step 6 of 9</Text>
                     <Text style={[Typography.h2, styles.h2]}>how many major household <Text style={styles.inlineText}>purchases</Text> you make each year? </Text>

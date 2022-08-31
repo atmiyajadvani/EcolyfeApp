@@ -37,7 +37,7 @@ const S6_Diet = ({navigation}) =>{
             <StatusBar style="auto" />
             <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
-                <Image source={require("../../assets/images/lazy_image.png")} style={styles.image}></Image>
+                <Image source={require("../../assets/images/diet_image.png")} style={styles.image}></Image>
                 <View style={styles.contentContainer}>
                     <Text style={[Typography.p3, styles.p3]}>Step 4 of 9</Text>
                     <Text style={[Typography.h2, styles.h2]}>How do you describe your <Text style={styles.inlineText}>diet?</Text></Text>

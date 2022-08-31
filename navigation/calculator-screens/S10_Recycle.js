@@ -41,7 +41,7 @@ const S10_Recycle = ({navigation}) =>{
             <StatusBar style="auto" />
             <BackButton onPress={goBackTo}></BackButton>
             <View style={styles.container}>
-                <Image source={require("../../assets/images/lazy_image.png")} style={styles.image}></Image>
+                <Image source={require("../../assets/images/recycle_image.png")} style={styles.image}></Image>
                 <View style={styles.contentContainer}>
                     <Text style={[Typography.p3, styles.p3]}>Step 8 of 9</Text>
                     <Text style={[Typography.h2, styles.h2]}>How much waste do you <Text style={styles.inlineText}>recycle?</Text></Text>
