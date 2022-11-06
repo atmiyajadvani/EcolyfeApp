@@ -10,31 +10,37 @@ import Colors from '../../constants/Colors';
 
 import SelectList from 'react-native-dropdown-select-list';
 import CarbonPoints from '../../constants/UI/CarbonPoints';
+import { useNavigation } from '@react-navigation/native';
 
 
-const S3_Residence = ({navigation}) =>{
+const S3_Residence = () =>{
+    const navigation = useNavigation();
 
     function goBackTo(){
         navigation.navigate("ProcessScreen");
     }
 
     function goToNextScreen(){ 
-        navigation.navigate("MembersScreen");
+        navigation.navigate("MembersScreen", {selected});
     }
 
     const [selected, setSelected]= React.useState("");
+    
+    const onSelection = (value) => {
+        const selectedData = Object.values(data).find(e => e.key === value);
+        setSelected(selectedData);
+    }
 
     const data = [
-        {key: '1', value: 'Bethune'},
-        {key: '2', value: 'Calumet'},
-        {key: '3', value: 'Pond'},
-        {key: '4', value: 'Stong'},
-        {key: '5', value: 'Tatham Hall'},
-        {key: '6', value: 'Vanier'},
-        {key: '7', value: 'Winters'},
-        {key: '8', value: 'Founders'},
+        {key: 1, value: 'Bethune'},
+        {key: 2, value: 'Calumet'},
+        {key: 3, value: 'Pond'},
+        {key: 4, value: 'Stong'},
+        {key: 5, value: 'Tatham Hall'},
+        {key: 6, value: 'Vanier'},
+        {key: 7, value: 'Winters'},
+        {key: 8, value: 'Founders'},
     ];
-    
 
 
     return (
@@ -49,7 +55,7 @@ const S3_Residence = ({navigation}) =>{
                     <View style={styles.dropdownContainer}>
                         <SelectList 
                             data={data}  
-                            setSelected={setSelected} 
+                            setSelected={onSelection} 
                             placeholder="select your residence"
                             inputStyles={[Typography.p2, styles.inputstyles]}
                             boxStyles={[Typography.p2, styles.boxstyles]}
@@ -60,8 +66,10 @@ const S3_Residence = ({navigation}) =>{
                         />
                     </View>
                 </View>
-                <CarbonPoints style={styles.carbonPoints} />
-                <Button text={"Continue"} type={"secondary"} onPress={goToNextScreen} ></Button>
+                <View style={{width:"100%", display:"flex",alignItems: "center"}}>
+                    <CarbonPoints style={styles.carbonPoints} />
+                    <Button text={"Continue"} type={"secondary"} onPress={goToNextScreen} ></Button>
+                </View>
             </View> 
         </SafeAreaView>
         
@@ -77,12 +85,13 @@ const styles = StyleSheet.create({
     },
 
     container: {
+        height: "91%",
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: 10,
     },
 
     contentContainer: {
+        flex: 1,
         textAlign: 'left',
         justifyContent: 'left',
         width: '85%',
@@ -97,9 +106,9 @@ const styles = StyleSheet.create({
     },
 
     image: {
-        width: 220,
+        flex: 1,
+        width: 300,
         height: 220,
-        marginBottom: 40,
     },
 
     inlineText: {
@@ -133,6 +142,10 @@ const styles = StyleSheet.create({
     },
 
     dropdownList: {
+        width: "100%",
+        marginTop: "1%",
+        height: 100,
+        position: "absolute",
         borderWidth: 1,
         borderColor: Colors.buttonBorder,
         backgroundColor: Colors.white,

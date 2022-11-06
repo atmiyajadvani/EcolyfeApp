@@ -5,7 +5,7 @@ const MarketplaceScreen = ({navigation}) =>{
 
     function onPress() {
         Alert.alert('This is the MarketplaceScreen');
-    };
+    }
 
     return (
         <View style={styles.container}>

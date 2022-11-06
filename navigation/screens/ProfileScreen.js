@@ -6,7 +6,7 @@ const ProfileScreen = ({navigation}) =>{
 
     function onPress() {
         Alert.alert('This is the ProfileScreen');
-    };
+    }
 
     return (
         <View style={styles.container}>

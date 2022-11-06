@@ -6,7 +6,7 @@ const BlogsScreen = ({navigation}) =>{
 
     function onPress() {
         Alert.alert('This is the BlogsScreen');
-    };
+    }
 
     return (
         <View style={styles.container}>

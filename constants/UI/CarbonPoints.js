@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom: 10,
         width: 190,
-        height: 30,
+        padding: 5,
         backgroundColor: Colors.white,
         borderWidth: 1,
         borderColor: Colors.buttonBorder,
-        borderRadius: 8,
-        marginBottom: 12,
+        borderRadius: 8
     },
 
     text: {

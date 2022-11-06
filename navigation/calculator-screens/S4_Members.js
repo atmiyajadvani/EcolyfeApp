@@ -10,9 +10,13 @@ import Colors from '../../constants/Colors';
 
 import SelectList from 'react-native-dropdown-select-list';
 import CarbonPoints from '../../constants/UI/CarbonPoints';
+import { useNavigation } from '@react-navigation/native';
 
 
-const S4_Members = ({navigation}) =>{
+const S4_Members = ({route}) =>{
+    const navigation = useNavigation();
+    const selectedS3Value = route;
+    console.log("selectedS3Value: ", selectedS3Value)
 
     function goBackTo(){
         navigation.navigate("ResidenceScreen");
